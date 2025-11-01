@@ -1,0 +1,348 @@
+/* 🌿 BASE RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background-color: #f8f9fb;
+  color: #212529;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 🌙 DARK MODE BASE */
+body.dark-mode {
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+}
+
+/* 🧭 NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: inherit;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .navbar {
+  background-color: #181818;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+/* 🧱 APP ROOT CONTAINER */
+.app-root {
+  background-color: inherit;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem 5rem;
+}
+
+.app-inner {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* ✏️ NOTE FORM CARD */
+.note-form-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .note-form-card {
+  background-color: #1b1b1b;
+  color: #f5f5f5;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
+}
+
+/* 🔍 SEARCH BAR */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 2rem 0;
+}
+
+.search-bar {
+  width: 400px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.25);
+}
+
+body.dark-mode .search-bar {
+  background-color: #1f1f1f;
+  border: 1px solid #555;
+  color: #f5f5f5;
+}
+
+/* 📌 PINNED NOTES SECTION */
+.pinned-section {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.pinned-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: flex-start;
+}
+
+.pinned-card {
+  flex: 1 1 340px;
+  max-width: 380px;
+}
+
+/* Light Mode Card */
+.note-card-darkmode {
+  background-color: #fff !important;
+  color: #212529 !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  padding: 1.2rem;
+}
+
+/* Dark Mode Card */
+body.dark-mode .note-card-darkmode {
+  background-color: #232323 !important;
+  color: #f9f9f9 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
+}
+
+/* Hover Animation */
+.note-card-darkmode:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-mode .note-card-darkmode:hover {
+  box-shadow: 0 6px 22px rgba(255, 255, 255, 0.06);
+}
+
+/* 🗂 KANBAN COLUMNS */
+.kanban-column {
+  border-radius: 14px;
+  padding: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* 🎨 LIGHT MODE COLUMN COLORS */
+.kanban-column.idea {
+  background: linear-gradient(135deg, #fff8dc, #fff4b0);
+  border: 1px solid #f1e4a8;
+}
+
+.kanban-column.draft {
+  background: linear-gradient(135deg, #e8f1ff, #d3e4ff);
+  border: 1px solid #c0d7ff;
+}
+
+.kanban-column.done {
+  background: linear-gradient(135deg, #e6f7ec, #c4f3d2);
+  border: 1px solid #b5e4c2;
+}
+
+/* ✨ Hover Animation */
+.kanban-column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌙 DARK MODE COLUMN COLORS */
+body.dark-mode .kanban-column.idea {
+  background: linear-gradient(135deg, #2a2412, #3b3317);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .kanban-column.draft {
+  background: linear-gradient(135deg, #162235, #1c2f4a);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .kanban-column.done {
+  background: linear-gradient(135deg, #14271a, #1c3b26);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 💬 Column Title Style */
+.column-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #212529;
+}
+
+.column-header:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .column-header {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f5f5;
+}
+
+body.dark-mode .column-header:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 🦶 FOOTER + SIDEBAR */
+/* 🦶 FOOTER FIX */
+.footer {
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  background-color: transparent;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  color: white;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 💡 Links */
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: #0056b3;
+}
+
+/* ❤️ Emoji color fix */
+.footer .heart {
+  color: red;
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode .footer {
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
+
+body.dark-mode .footer a {
+  color: #66b3ff;
+}
+
+body.dark-mode .footer a:hover {
+  color: #3399ff;
+}
+.sidebar {
+  background-color: inherit !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Fix Headings and Text in Dark Mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f5f5f5 !important;
+}
+
+/* ✨ SCROLLBAR STYLING */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.7);
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+  }
+
+  .note-form-card {
+    padding: 1.5rem;
+  }
+
+  .pinned-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* 🌙 Fix: Ensure text stays readable inside pinned notes in dark mode */
+body.dark-mode .note-card-darkmode h5,
+body.dark-mode .note-card-darkmode p,
+body.dark-mode .note-card-darkmode small,
+body.dark-mode .note-card-darkmode .text-muted,
+body.dark-mode .note-card-darkmode .text-secondary {
+  color: #f5f5f5 !important; /* bright readable text */
+}
+
+/* Add slight dimming for muted text */
+body.dark-mode .note-card-darkmode .text-muted,
+body.dark-mode .note-card-darkmode .text-secondary {
+  color: rgba(230, 230, 230, 0.75) !important;
+}
