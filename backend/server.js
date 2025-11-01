@@ -14,7 +14,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173", // for local dev
-    "https://notes-app-kanban-lite.vercel.app" // ✅ frontend live URL (add after deploy)
+    "https://notes-app-kanban-lite-frontend.onrender.com" // ✅ frontend live URL (add after deploy)
   ],
   credentials: true
 }));
