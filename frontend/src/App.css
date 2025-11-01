@@ -346,3 +346,80 @@ body.dark-mode .note-card-darkmode .text-muted,
 body.dark-mode .note-card-darkmode .text-secondary {
   color: rgba(230, 230, 230, 0.75) !important;
 }
+/* 🌈 Auth Page Background */
+.auth-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: whitesmoke;
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🌟 Auth Card */
+.auth-container {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-container h2 {
+  font-weight: 700;
+  color: #212529;
+}
+
+.auth-container input {
+  border-radius: 10px;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+}
+
+.auth-container button {
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.auth-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  color: #0056b3;
+}

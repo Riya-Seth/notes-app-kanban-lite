@@ -12,7 +12,10 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173", // for local dev
+    "https://notes-app-kanban-lite.vercel.app" // ✅ frontend live URL (add after deploy)
+  ],
   credentials: true
 }));
 app.use(express.json());

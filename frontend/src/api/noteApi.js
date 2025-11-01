@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // ✅ Set the base URL to your backend (port 5050)
-const API = axios.create({ baseURL: 'http://localhost:5050/api' });
+const API = axios.create({ baseURL: "https://notes-app-kanban-lite-backend.onrender.com/api", });
 
 // CRUD operations
 export const fetchNotes = () => API.get('/notes');
